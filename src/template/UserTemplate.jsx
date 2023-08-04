@@ -7,8 +7,7 @@ import Loading from "../pages/Loading/Loading";
 
 const UserTemplate = () => {
   const { isLoading } = useSelector((state) => state.loading);
-  console.log("a");
-  console.log(isLoading);
+
   return (
     <Fragment>
       {isLoading ? <Loading /> : <></>}

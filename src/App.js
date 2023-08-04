@@ -7,6 +7,7 @@ import AdminTemplate from "./template/AdminTemplate";
 import LoginAdmin from "./pages/LoginAdmin/LoginAdmin";
 import UserManage from "./pages/UserManage/UserManage";
 import QuanTriPhim from "./Components/QuanLyPhim/QuanTriPhim";
+import SignUp from "./pages/SignUp/SignUp";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route path="/" element={<UserTemplate />}>
           <Route index element={<HomePage />} />
           <Route path="/login" element={<Login />} />
+
+          <Route path="/signUp" element={<SignUp />} />
         </Route>
         <Route path="/admin" element={<AdminTemplate />}>
           <Route index element={<UserManage />} />
