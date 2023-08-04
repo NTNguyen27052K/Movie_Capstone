@@ -7,6 +7,10 @@ import AdminTemplate from "./template/AdminTemplate";
 import LoginAdmin from "./pages/LoginAdmin/LoginAdmin";
 import UserManage from "./pages/UserManage/UserManage";
 import QuanTriPhim from "./Components/QuanLyPhim/QuanTriPhim";
+import CheckOutTemplate from "./template/CheckOutTemplate";
+import CheckOut from "./pages/CheckOut/CheckOut";
+import Detail from "./pages/Detail/Detail";
+// import CheckOutTemplate from "./template/CheckOutTemplate";
 
 function App() {
   return (
@@ -14,8 +18,16 @@ function App() {
       <Routes>
         <Route path="/" element={<UserTemplate />}>
           <Route index element={<HomePage />} />
+          <Route path="/detail/:id" element={<Detail />} />
           <Route path="/login" element={<Login />} />
         </Route>
+
+          {/* checkout */}
+        <Route path="/datve/:id" element={<CheckOutTemplate/>}> 
+          <Route index element={<CheckOut />} />
+         </Route>
+        
+
         <Route path="/admin" element={<AdminTemplate />}>
           <Route index element={<UserManage />} />
           <Route index path="film" element={<QuanTriPhim />} />

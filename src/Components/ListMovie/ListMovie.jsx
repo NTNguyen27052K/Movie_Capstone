@@ -61,9 +61,12 @@ const ListMovie = () => {
                   {tenPhim}
                 </h3>
                 <p className="line-clamp-2">{moTa}</p>
-                <NavLink className="w-full my-3" to={`/detail/${maPhim}`}>
-                  <Button type="primary" className="w-full my-3" danger>
-                    MUA VÉ
+                <NavLink
+                  className="w-full inline-block"
+                  to={`/detail/${item.maPhim}`}
+                >
+                  <Button  className="w-full text-lg h-10" type="primary" danger>
+                    <NavLink to={`/detail/${item.maPhim}`}>Chi tiết - Đặt vé</NavLink>
                   </Button>
                 </NavLink>
               </div>
