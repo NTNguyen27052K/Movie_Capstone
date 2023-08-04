@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Table, Tag, Space } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { nguoiDungServ } from "../../services/nguoiDungServices";
-import { movieServ } from "../../services/movieServices";
-import { getAllMovie } from "../../redux/slices/nguoiDungSlice";
+// import { nguoiDungServ } from "../../services/";
+import { movieSer } from "../../services/movieServices";
+import { getAllMovie } from "../../redux/slices/userSlices";
 import FormMovie from "./FormMovie";
 import { Drawer } from "antd";
 // import { getAllUser } from "../../redux/slices/nguoiDungSlice";
@@ -27,8 +27,8 @@ const QuanTriPhim = () => {
   //   console.log(users);
   console.log(movies);
   useEffect(() => {
-    movieServ
-      .getAllMovie()
+    movieSer
+      .getAllListMovie()
       .then((result) => {
         console.log(result);
         setMovies(result.data.content);
@@ -105,7 +105,7 @@ const QuanTriPhim = () => {
           <button
             className="py-2 px-5 bg-red-500 text-white rounded-lg hover:bg-red-900  duration-500"
             onClick={() => {
-              nguoiDungServ
+              movieSer
                 .delMovie(record.maPhim)
                 .then((res) => {
                   alert(`xóa thành công Phim: ${record.tenPhim}`);

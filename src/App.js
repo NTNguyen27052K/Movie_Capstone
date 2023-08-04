@@ -6,6 +6,7 @@ import Login from "./pages/Login/Login";
 import AdminTemplate from "./template/AdminTemplate";
 import LoginAdmin from "./pages/LoginAdmin/LoginAdmin";
 import UserManage from "./pages/UserManage/UserManage";
+import QuanTriPhim from "./Components/QuanLyPhim/QuanTriPhim";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         </Route>
         <Route path="/admin" element={<AdminTemplate />}>
           <Route index element={<UserManage />} />
+          <Route index path="film" element={<QuanTriPhim />} />
         </Route>
         <Route path="/admin-login" element={<LoginAdmin />} />
         <Route path="*" element={<Page404 />}></Route>

@@ -2,7 +2,7 @@ import { Formik, useFormik } from "formik";
 import React, { useEffect, useState } from "react";
 
 import { useDispatch } from "react-redux";
-import { themPhimUploatHinh } from "../../redux/slices/nguoiDungSlice";
+import { themPhimUploatHinh } from "../../redux/slices/userSlices";
 import { DatePicker, Form, Input, InputNumber, Switch } from "antd";
 import moment from "moment/moment";
 
