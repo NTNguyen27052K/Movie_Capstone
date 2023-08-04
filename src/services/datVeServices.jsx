@@ -9,15 +9,15 @@ export const datVeServ = {
   },
 
   datVe: (thongTinDatVe = new ThongTinDatVe()) => {
-    thongTinDatVe = {
-      // maLichChieu: 0,
-      // danhSachVe: [
-      //   // {
-      //   //   "maGhe": 0,
-      //   //   "giaVe": 0
-      //   // }
-      // ],
-    };
+    // thongTinDatVe = {
+    //   // maLichChieu: 0,
+    //   // danhSachVe: [
+    //   //   // {
+    //   //   //   "maGhe": 0,
+    //   //   //   "giaVe": 0
+    //   //   // }
+    //   // ],
+    // };
     return https.post("/api/QuanLyDatVe/DatVe", thongTinDatVe);
   },
 };

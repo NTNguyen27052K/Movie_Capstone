@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { DAT_GHE } from "../../redux/types/QuanLyDatVeType";
 import _ from "lodash";
 import { ThongTinDatVe } from "../../_core/models/ThongTinDatVe";
-import { datVe } from "../../redux/actions/QuanLyDatVeAction";
+import { datVeAction } from "../../redux/actions/QuanLyDatVeAction";
 
 // import {  QuanLyDatVeReducer} from "./../../redux/reducers/QuanLyDatVeReducer";
 
@@ -101,14 +101,14 @@ const CheckOut = () => {
     thongTinDatVe.maLichChieu = params.id;
     thongTinDatVe.danhSachVe = dsGheDangDat;
     console.log(thongTinDatVe)
-    dispatch(datVe(thongTinDatVe))
+    dispatch(datVeAction(thongTinDatVe))
       .then(() => {
         // thông báo đặt thành công
-        // window.alert("Đặt vé thành công!");
+        window.alert("Đặt vé thành công!");
         console.log("success")
 
         // Đặt vé thành công, tải lại trang
-        // window.location.reload();
+        window.location.reload();
       })
       .catch((error) => {
         console.log("Đặt vé thất bại:", error);
@@ -203,6 +203,16 @@ const CheckOut = () => {
           >
             <div
               onClick={buttonDatVe}
+              // onClick={()=>{
+              //   const thongTinDatVe =new ThongTinDatVe()
+
+              //   thongTinDatVe.maLichChieu =params.id;
+              //   thongTinDatVe.danhSachVe = dsGheDangDat;
+
+              //   console.log(thongTinDatVe, "thong tin dat ve");
+
+              //   dispatch(datVeAction(thongTinDatVe));
+              // }}
               className="dat_ve bg-green-500 text-white w-full text-center py-3 font-bold text-2xl cursor-pointer"
             >
               Đặt Vé
