@@ -1,0 +1,15 @@
+:where(.css-dev-only-do-not-override-1sn0ohr).ant-table-wrapper
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  > *:last-child {
+  text-align: center;
+}
+.ant-table-tbody tr td:last-child {
+  display: flex;
+  justify-content: center;
+}
+:where(.css-dev-only-do-not-override-1sn0ohr).ant-btn > span {
+  color: #000;
+}

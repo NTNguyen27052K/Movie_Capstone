@@ -13,4 +13,7 @@ export const movieSer = {
   addPhim: (formData) => {
     return https.post(`/api/QuanLyPhim/CapNhatPhimUpload`, formData);
   },
+  getAllListMovie: () => {
+    return https.get("/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP09");
+  },
 };

@@ -1,19 +1,35 @@
-import React, { useState } from "react";
-import { Button, Drawer, Radio, Space } from "antd";
+import React, { useEffect, useState } from "react";
+import { Drawer } from "antd";
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setDataName } from "../../redux/slices/userSlices";
+import { getDataLocal, setLocal } from "../../utils/localStore";
 
 const Header = () => {
+  const { name } = useSelector((state) => {
+    console.log(state);
+    return state.user;
+  });
+
   const [open, setOpen] = useState(false);
+
   const [placement, setPlacement] = useState("left");
+
+  const dispatch = useDispatch();
+
   const showDrawer = () => {
     setOpen(true);
   };
+
   const onClose = () => {
     setOpen(false);
   };
+
   const onChange = (e) => {
     setPlacement(e.target.value);
   };
-  // fixed
+
   return (
     <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -28,18 +44,46 @@ const Header = () => {
           </span>
         </a>
         <div className="flex md:order-2">
-          <button
-            type="button"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
-          >
-            Sign Up
-          </button>
-          <button
-            type="button"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ml-3"
-          >
-            Sign In
-          </button>
+          {name != null ? (
+            <div className="flex items-center">
+              <img
+                src="https://picsum.photos/200/300"
+                alt=""
+                className="rounded-full w-8 h-8 mr-3"
+              />
+              <p className="text-white mr-3">{name.hoTen}</p>
+              {/* dispatch(setDataName(result.data.content)); */}
+              <button
+                onClick={() => {
+                  dispatch(setDataName(""));
+                  setLocal("user", null);
+                  window.location.reload();
+                }}
+              >
+                <i className="fa-solid fa-right-from-bracket fa-xl text-white"></i>
+              </button>
+            </div>
+          ) : (
+            <>
+              <NavLink to={"/login"} className={"mr-4"}>
+                <button
+                  type="button"
+                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ml-3 "
+                >
+                  Login
+                </button>
+              </NavLink>
+              <NavLink>
+                <button
+                  type="button"
+                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
+                >
+                  Sign Up
+                </button>
+              </NavLink>
+            </>
+          )}
+
           <button
             data-collapse-toggle="navbar-sticky"
             // type="button"
@@ -123,6 +167,5 @@ const Header = () => {
     </nav>
   );
 };
-{
-}
+
 export default Header;

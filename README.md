@@ -1,3 +1,5 @@
+master branch
+
 Các thư mục cần tạo:
 
 - Components(Chứa các thành phần nhỏ trong một page)
@@ -23,3 +25,6 @@ Các thư viện cần cài đặt:
 
 // link truy cập swagger lấy api
 https://movienew.cybersoft.edu.vn/swagger/index.html
+
+//Thư viện animation
+https://lottiefiles.com/

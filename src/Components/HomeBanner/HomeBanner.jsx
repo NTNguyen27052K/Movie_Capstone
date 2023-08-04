@@ -18,7 +18,7 @@ const HomeBanner = () => {
     // console.log(res.data.content);
     setBanner(res.data.content);
   };
-  console.log(banner);
+  // console.log(banner);
   useEffect(() => {
     getAllBanner();
   }, []);
