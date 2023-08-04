@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { movieSer } from "../../services/movieServices";
-import { Result } from "antd";
+
 import "./ListMovie.scss";
-import { Button, Space } from "antd";
+import { Button } from "antd";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {
+  set_loading_ended,
+  set_loading_started,
+} from "../../redux/slices/loadingSlice";
 
 const ListMovie = () => {
   const [listMovie, setlistMovie] = useState([]);
+  const dispatch = useDispatch();
+
   //   const getAllListMovie = async () => {
   //     const res = await movieSer.getAllListMovie();
   //     console.log(res);
@@ -16,14 +23,17 @@ const ListMovie = () => {
   //     getAllListMovie();
   //   }, []);
   useEffect(() => {
+    dispatch(set_loading_started());
     movieSer
       .getAllListMovie()
       .then((result) => {
         // console.log(result);
         setlistMovie(result.data.content);
+        dispatch(set_loading_ended());
       })
       .catch((error) => {
         console.log(error);
+        dispatch(set_loading_ended());
       });
   }, []);
 
