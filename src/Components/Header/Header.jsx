@@ -7,7 +7,10 @@ import { setDataName } from "../../redux/slices/userSlices";
 import { getDataLocal, setLocal } from "../../utils/localStore";
 
 const Header = () => {
-  const { name } = useSelector((state) => state.user);
+  const { name } = useSelector((state) => {
+    console.log(state);
+    return state.user;
+  });
 
   const [open, setOpen] = useState(false);
 
