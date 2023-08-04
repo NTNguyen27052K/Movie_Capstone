@@ -64,7 +64,7 @@ const TableUser = () => {
                   })
                   .catch((error) => {
                     console.log(error);
-                    alert("Error?");
+                    alert("Error delete?");
                   });
               }}
             >
@@ -86,7 +86,7 @@ const TableUser = () => {
     return { ...item, id: index + 1 };
   });
 
-  return <Table columns={columns} dataSource={userList} />;
+  return <Table columns={columns} dataSource={users.length > 0 && userList} />;
 };
 
 export default TableUser;

@@ -11,7 +11,7 @@ const tokenAuthorization = getDataLocal("user");
 const configHeaderAxios = () => {
   return {
     TokenCybersoft,
-    Authorization: "Bearer " + tokenAuthorization.accessToken,
+    Authorization: "Bearer " + tokenAuthorization?.accessToken,
   };
 };
 
