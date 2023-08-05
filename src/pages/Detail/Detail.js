@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CustomCard } from "@tsamantanis/react-glassmorphism";
 import "@tsamantanis/react-glassmorphism/dist/index.css";
 // import "../../../src/index.scc";
-import { Tabs } from "antd";
+import { Button, Tabs } from "antd";
 import { rapServ } from "../../services/rapServices";
 import { NavLink, useParams } from "react-router-dom";
 import moment from "moment";
@@ -52,21 +52,24 @@ const Detail = (maPhim) => {
                     </div>
                   </div>
                   <div className="lich-chieu mt-2 grid grid-cols-4">
-                    {cumRap.lichChieuPhim
-                      ?.slice(0, 12)
-                      .map((lichChieu, index) => {
-                        return (
-                          <NavLink
-                            to={`/datve/${lichChieu.maLichChieu}`}
-                            key={index}
-                            className="col-span-1 text-green-700 font-bold"
-                          >
-                            {moment(lichChieu.ngayChieuGioChieu).format(
-                              "hh:mm A"
-                            )}
-                          </NavLink>
-                        );
-                      })}
+                    <Button type="primary" danger>
+                      {cumRap.lichChieuPhim
+                        ?.slice(0, 12)
+                        .map((lichChieu, index) => {
+                          return (
+                            <NavLink
+                              to={`/datve/${lichChieu.maLichChieu}`}
+                              key={index}
+                              className="col-span-1 text-green-700 font-bold"
+                            >
+                              {moment(lichChieu.ngayChieuGioChieu).format(
+                                "hh:mm A"
+                              )}{" "}
+                              - Đặt vé
+                            </NavLink>
+                          );
+                        })}
+                    </Button>
                   </div>
                 </div>
               );
