@@ -17,3 +17,12 @@ export const movieSer = {
     return https.get("/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP09");
   },
 };
+
+export const movieServ = {
+  getAllBanner: () => {
+    return https.get('/api/QuanLyPhim/LayDanhSachBanner');
+  },
+  getAllMovie: () => {
+    return https.get('/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP09');
+  },
+};
