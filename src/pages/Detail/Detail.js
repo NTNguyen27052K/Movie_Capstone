@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { CustomCard } from "@tsamantanis/react-glassmorphism";
 import "@tsamantanis/react-glassmorphism/dist/index.css";
-import { Tabs } from "antd";
+import { Button, Tabs } from "antd";
 import { rapServ } from "../../services/rapServices";
 import { NavLink, useParams } from "react-router-dom";
 import moment from "moment";
 import "./circle.css";
 
-
-
 const Detail = (maPhim) => {
-  
-
   const params = useParams();
   const [maPhimDetail, setMaPhimDetail] = useState([]);
 
@@ -55,6 +51,7 @@ const Detail = (maPhim) => {
                     </div>
                   </div>
                   <div className="lich-chieu mt-2 grid grid-cols-4">
+                    <Button type="primary" danger>
                     {cumRap.lichChieuPhim
                       ?.slice(0, 12)
                       .map((lichChieu, index) => {
@@ -66,10 +63,13 @@ const Detail = (maPhim) => {
                           >
                             {moment(lichChieu.ngayChieuGioChieu).format(
                               "hh:mm A"
-                            )}
+                            )}{" "}
+                            - Đặt vé
                           </NavLink>
                         );
                       })}
+                    </Button>
+                    
                   </div>
                 </div>
               );
@@ -124,7 +124,7 @@ const Detail = (maPhim) => {
           </div>
 
           {/* đánh giá right */}
-          <div  className="danhgia col-span-4 ms-6">
+          <div className="danhgia col-span-4 ms-6">
             {/* <h1 style={{marginLeft:"10%"}} className="text-green-400 text-2xl">
               <i class="fa-regular fa-star"></i>
               <i class="fa-regular fa-star"></i>
@@ -154,7 +154,6 @@ const Detail = (maPhim) => {
             style={{ maxHeight: "400px", overflowY: "scroll" }}
             items={renderPhimDetail()}
           />
-         
         </div>
       </CustomCard>
     </div>
