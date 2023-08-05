@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { CustomCard } from "@tsamantanis/react-glassmorphism";
 import "@tsamantanis/react-glassmorphism/dist/index.css";
+// import "../../../src/index.scc";
 import { Tabs } from "antd";
 import { rapServ } from "../../services/rapServices";
 import { NavLink, useParams } from "react-router-dom";
 import moment from "moment";
 import "./circle.css";
 
-
-
 const Detail = (maPhim) => {
-  
-
   const params = useParams();
   const [maPhimDetail, setMaPhimDetail] = useState([]);
 
@@ -124,7 +121,7 @@ const Detail = (maPhim) => {
           </div>
 
           {/* đánh giá right */}
-          <div  className="danhgia col-span-4 ms-6">
+          <div className="danhgia col-span-4 ms-6">
             {/* <h1 style={{marginLeft:"10%"}} className="text-green-400 text-2xl">
               <i class="fa-regular fa-star"></i>
               <i class="fa-regular fa-star"></i>
@@ -154,7 +151,6 @@ const Detail = (maPhim) => {
             style={{ maxHeight: "400px", overflowY: "scroll" }}
             items={renderPhimDetail()}
           />
-         
         </div>
       </CustomCard>
     </div>
