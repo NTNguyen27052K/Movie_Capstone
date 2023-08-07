@@ -6,7 +6,7 @@ import TableUser from "../../Components/AdminTemplete/TableUser/TableUser";
 import { PlusOutlined } from "@ant-design/icons";
 import { Button, Modal } from "antd";
 import FormAddUser from "../../Components/AdminTemplete/FormAddUser/FormAddUser";
-
+import "./userManage.scss";
 const UserManage = () => {
   const dispatch = useDispatch();
 

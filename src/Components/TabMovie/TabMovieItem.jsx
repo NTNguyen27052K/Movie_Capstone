@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Result, Tabs } from "antd";
 import { cinemaSer } from "../../services/cinemaServices";
 import moment from "moment";
+import "./tabMovieItem.scss";
 
 const TabMovieItem = ({ maHeThongRap }) => {
   const [systemCinema, setSystemCinema] = useState([]);
@@ -33,19 +34,23 @@ const TabMovieItem = ({ maHeThongRap }) => {
           if (item.dangChieu) {
             return (
               <div className="flex" key={index}>
-                <div className="w-2/12 mb-5">
-                  <img src={item.hinhAnh} alt="" />
+                <div className="w-2/12 mb-5 mr-5">
+                  <img
+                    src={item.hinhAnh}
+                    className="rounded-md h-36 w-full"
+                    alt=""
+                  />
                 </div>
                 <div className="w-10/12">
-                  <h3>{item.tenPhim}</h3>
-                  <div className="flex flex-wrap">
+                  <h3 className="font-bold mb-1">{item.tenPhim}</h3>
+                  <div className="flex flex-wrap tabMovieItem">
                     {item.lstLichChieuTheoPhim
                       .slice(0, 4)
                       .map((suatChieu, index) => {
                         return (
                           <p
                             key={index}
-                            className="w-1/2 border border-black rounded-md  py-2 px-4 mb-2 "
+                            className="border border-black rounded-md  py-2 mb-2  mr-2"
                           >
                             {moment(suatChieu.ngayChieuGioChieu).format(
                               "DD/MM/YYYY ~ h:mm"

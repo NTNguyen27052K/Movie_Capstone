@@ -45,10 +45,10 @@ const FromLogin = () => {
     },
     validationSchema: Yup.object({
       taiKhoan: Yup.string()
-        .min(5, "Must be 5 characters or hight")
+        .min(3, "Must be 5 characters or hight")
         .required("Empty"),
       matKhau: Yup.string()
-        .min(5, "Must be 5 characters or hight")
+        .min(3, "Must be 5 characters or hight")
         .required("Empty"),
     }),
   });

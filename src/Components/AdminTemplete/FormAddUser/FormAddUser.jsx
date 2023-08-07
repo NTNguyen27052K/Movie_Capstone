@@ -1,12 +1,24 @@
 import { useFormik } from "formik";
-import React from "react";
-import { Input } from "antd";
+import React, { useEffect, useState } from "react";
+import { Input, Modal } from "antd";
 import { userAdminSer } from "../../../services/userListServices";
 import { useDispatch } from "react-redux";
 import { getAllUser } from "../../../redux/slices/userSlices";
 
 const FormAddUser = () => {
   const dispatch = useDispatch();
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -24,9 +36,10 @@ const FormAddUser = () => {
         .then((result) => {
           dispatch(getAllUser());
           formik.resetForm();
+          handleCancel();
         })
         .catch((error) => {
-          console.log(error);
+          alert("Tài khoản đã tồn tại!");
         });
     },
   });
@@ -135,7 +148,7 @@ const FormAddUser = () => {
             />
 
             <select
-              class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  block  p-2.5  dark:border-blue-500  dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-3 w-4/12"
+              className="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  block  p-2.5  dark:border-blue-500  dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-3 w-4/12"
               name="maLoaiNguoiDung"
               onChange={handleChange}
               value={values.maLoaiNguoiDung}
