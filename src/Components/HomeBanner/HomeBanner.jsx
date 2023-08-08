@@ -28,9 +28,9 @@ const HomeBanner = () => {
     <Carousel autoplay>
       {banner.map((banner, index) => {
         return (
-          <div key={index}>
+          <div key={index} className="">
             <img
-              className="w-full min-h-screen"
+              className="xl:w-full xl:min-h-screen object-cover h-96 w-full "
               src={banner.hinhAnh}
               style={contentStyle}
               alt=""

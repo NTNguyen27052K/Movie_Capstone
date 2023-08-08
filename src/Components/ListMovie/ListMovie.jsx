@@ -40,15 +40,15 @@ const ListMovie = () => {
   return (
     <div className="max-w-screen-xl mx-auto py-10">
       <h2 className="text-3xl font-bold mb-9">Danh sách phim</h2>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 gap-1 md:grid-cols-2 md:gap-2 xl:grid-cols-4 xl:gap-4 w-3/4 mx-auto ">
         {listMovie.map((item, index) => {
           const { hinhAnh, moTa, tenPhim, maPhim } = item;
           return (
-            <div className="movie__item" key={index}>
+            <div className="movie__item mb-3" key={index}>
               <img
                 src={hinhAnh}
                 alt=""
-                className="h-[314px] w-full object-cover rounded-md"
+                className="xl:h-[314px] xl:w-full object-cover rounded-md  h-40 w-full"
               />
               <div className="movie__item--text ">
                 <h3 className="my-3">
@@ -65,8 +65,10 @@ const ListMovie = () => {
                   className="w-full inline-block"
                   to={`/detail/${item.maPhim}`}
                 >
-                  <Button  className="w-full text-lg h-10" type="primary" danger>
-                    <NavLink to={`/detail/${item.maPhim}`}>Chi tiết - Đặt vé</NavLink>
+                  <Button className="w-full text-lg h-10" type="primary" danger>
+                    <NavLink to={`/detail/${item.maPhim}`}>
+                      Chi tiết - Đặt vé
+                    </NavLink>
                   </Button>
                 </NavLink>
               </div>
