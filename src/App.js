@@ -11,6 +11,8 @@ import SignUp from "./pages/SignUp/SignUp";
 import CheckOutTemplate from "./template/CheckOutTemplate";
 import CheckOut from "./pages/CheckOut/CheckOut";
 import Detail from "./pages/Detail/Detail";
+import Test from "./Components/Test";
+
 // import CheckOutTemplate from "./template/CheckOutTemplate";
 
 function App() {
@@ -24,7 +26,7 @@ function App() {
 
           <Route path="/signUp" element={<SignUp />} />
         </Route>
-
+        <Route path="test" element={<Test />}></Route>
         {/* checkout */}
         <Route path="/datve/:id" element={<CheckOutTemplate />}>
           <Route index element={<CheckOut />} />
@@ -34,6 +36,7 @@ function App() {
           <Route index element={<UserManage />} />
           <Route index path="film" element={<QuanTriPhim />} />
         </Route>
+
         <Route path="/admin-login" element={<LoginAdmin />} />
         <Route path="*" element={<Page404 />}></Route>
       </Routes>

@@ -283,6 +283,7 @@ const TableUser = () => {
     return {
       ...item,
       id: index + 1,
+      key: index,
     };
   });
 

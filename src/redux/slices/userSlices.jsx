@@ -47,6 +47,7 @@ export const userSlice = createSlice({
       }
     },
   },
+  // redux Thunk
   extraReducers: (builder) => {
     builder.addCase(getAllUser.fulfilled, (state, action) => {
       // console.log(state);

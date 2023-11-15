@@ -27,7 +27,7 @@ const ListMovie = () => {
     movieSer
       .getAllListMovie()
       .then((result) => {
-        // console.log(result);
+        console.log(result);
         setlistMovie(result.data.content);
         dispatch(set_loading_ended());
       })
@@ -51,10 +51,10 @@ const ListMovie = () => {
                 className="xl:h-[314px] xl:w-full object-cover rounded-md  h-40 w-full"
               />
               <div className="movie__item--text ">
-                <h3 className="my-3">
+                <h3 className="my-3 truncate">
                   <span
                     className="text-white py-1 px-2 bg-red-600 rounded-md
-              mr-3 "
+              mr-3"
                   >
                     C18
                   </span>
