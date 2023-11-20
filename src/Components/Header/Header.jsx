@@ -157,11 +157,32 @@ const Header = () => {
         onClose={onClose}
         open={open}
         key={placement}
+        width={150}
+        style={{ backgroundColor: "#111827" }}
+        className="text-white"
       >
-        <p>Sign In</p>
-        <p>Sign Up</p>
+        <div className="navbar__sticky--top mb-2">
+          <NavLink to={"/login"}>
+            <p className="flex items-center mb-2">
+              <i className="fa-solid fa-user border-2 p-2 rounded-full mr-2"></i>
+              Sign In
+            </p>
+          </NavLink>
+          <NavLink to={"/signUp"}>
+            <p className="flex items-center">
+              <i className="fa-solid fa-user border-2 p-2 rounded-full mr-2"></i>
+              Sign Up
+            </p>
+          </NavLink>
+        </div>
+
         <hr />
-        <p>Some contents...</p>
+        <div className="navbar__sticky--top my-2">
+          <p>Lịch Chiếu</p>
+          <p> Cụm Rạp</p>
+          <p>Tin Tức</p>
+          <p>Ứng Dụng</p>
+        </div>
       </Drawer>
     </nav>
   );

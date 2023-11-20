@@ -1,5 +1,7 @@
 master branch
 
+=====Capstone movie main
+
 Các thư mục cần tạo:
 
 - Components(Chứa các thành phần nhỏ trong một page)

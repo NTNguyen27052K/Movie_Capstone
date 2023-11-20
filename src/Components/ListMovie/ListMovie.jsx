@@ -38,9 +38,11 @@ const ListMovie = () => {
   }, []);
 
   return (
-    <div className="max-w-screen-xl mx-auto py-10">
-      <h2 className="text-3xl font-bold mb-9">Danh sách phim</h2>
-      <div className="grid grid-cols-1 gap-1 md:grid-cols-2 md:gap-2 xl:grid-cols-4 xl:gap-4 w-3/4 mx-auto ">
+    <div className="max-w-screen-xl xl:mx-auto py-2 xl:py-10 mx-10">
+      <h2 className="text-xl xl:text-3xl font-bold mb-2 xl:mb-9">
+        Danh sách phim
+      </h2>
+      <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-2  md:gap-2 xl:gap-4">
         {listMovie.map((item, index) => {
           const { hinhAnh, moTa, tenPhim, maPhim } = item;
           return (
@@ -51,21 +53,27 @@ const ListMovie = () => {
                 className="xl:h-[314px] xl:w-full object-cover rounded-md  h-40 w-full"
               />
               <div className="movie__item--text ">
-                <h3 className="my-3 truncate">
+                <h3 className="my-3 truncate text-xs xl:text-xl ">
                   <span
-                    className="text-white py-1 px-2 bg-red-600 rounded-md
+                    className="text-white py-1 px-2 bg-red-600 rounded-lg
               mr-3"
                   >
                     C18
                   </span>
                   {tenPhim}
                 </h3>
-                <p className="line-clamp-2">{moTa}</p>
+                {/* hidden xl:block xl:line-clamp-2 */}
+                <p className="hidden xl:line-clamp-2 my-3">{moTa}</p>
+
                 <NavLink
-                  className="w-full inline-block"
+                  className="w-full inline-block align-middle"
                   to={`/detail/${item.maPhim}`}
                 >
-                  <Button className="w-full text-lg h-10" type="primary" danger>
+                  <Button
+                    className="w-full text-sm xl:text-lg xl:h-10 h-10"
+                    type="primary"
+                    danger
+                  >
                     <NavLink to={`/detail/${item.maPhim}`}>
                       Chi tiết - Đặt vé
                     </NavLink>

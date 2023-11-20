@@ -24,7 +24,7 @@ const TabMovieItem = ({ maHeThongRap }) => {
     return systemCinema[0]?.lstCumRap.map((item, index) => {
       return {
         label: (
-          <div className="text-left w-60">
+          <div className="text-left ww-1/2">
             <p className="truncate ...">{item.tenCumRap}</p>
             <p className="truncate ...">{item.diaChi}</p>
           </div>
@@ -34,14 +34,14 @@ const TabMovieItem = ({ maHeThongRap }) => {
           if (item.dangChieu) {
             return (
               <div className="flex" key={index}>
-                <div className="w-2/12 mb-5 mr-5">
+                <div className="w-3/12 mb-5 mr-5">
                   <img
                     src={item.hinhAnh}
-                    className="rounded-md h-36 w-full"
+                    className="rounded-md h-56 w-full"
                     alt=""
                   />
                 </div>
-                <div className="w-10/12">
+                <div className="w-9/12 mx-auto">
                   <h3 className="font-bold mb-1">{item.tenPhim}</h3>
                   <div className="flex flex-wrap tabMovieItem">
                     {item.lstLichChieuTheoPhim
@@ -50,7 +50,7 @@ const TabMovieItem = ({ maHeThongRap }) => {
                         return (
                           <p
                             key={index}
-                            className="border border-black rounded-md  py-2 mb-2  mr-2"
+                            className="border border-black rounded-md px-2  py-2 mb-2 mr-2"
                           >
                             {moment(suatChieu.ngayChieuGioChieu).format(
                               "DD/MM/YYYY ~ h:mm"
