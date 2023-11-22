@@ -14,8 +14,8 @@ const SignUp = () => {
     },
   };
   return (
-    <div className="flex max-w-screen-xl mx-auto">
-      <div className="w-1/2 flex items-center ">
+    <div className="xl:flex xl:items-center max-w-screen-xl h-[35rem] xl:mx-auto">
+      <div className="w-1/2 hidden xl:block">
         <Lottie
           options={defaultOptions}
           //   style={{ height: "50vh", width: "100%" }}
@@ -24,7 +24,7 @@ const SignUp = () => {
           height={400}
         />
       </div>
-      <div className="w-1/2 pl-28">
+      <div className="xl:w-1/2 w-full mx-auto px-5 xl:pl-28">
         <FormSignUp />
       </div>
     </div>

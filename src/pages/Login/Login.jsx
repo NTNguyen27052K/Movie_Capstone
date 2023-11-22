@@ -14,8 +14,8 @@ const Login = () => {
   };
   //   max-w-screen-xl mx-auto
   return (
-    <div className="flex max-w-screen-xl mx-auto">
-      <div className="w-1/2 pr-28">
+    <div className="flex items-center max-w-screen-xl xl:mx-auto h-[30rem]">
+      <div className="w-1/2 pr-28 hidden xl:block">
         <Lottie
           options={defaultOptions}
           //   style={{ height: "50vh", width: "100%" }}
@@ -24,7 +24,7 @@ const Login = () => {
           height={400}
         />
       </div>
-      <div className="w-1/2 pl-28">
+      <div className="mx-auto xl:w-1/2 xl:pl-28">
         <FromLogin />
       </div>
     </div>
