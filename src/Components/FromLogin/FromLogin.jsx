@@ -52,7 +52,8 @@ const FromLogin = () => {
         .required("Empty"),
     }),
   });
-  const { handleSubmit, handleChange, handleBlur, errors, touched } = formik;
+  const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
+    formik;
   return (
     <div>
       {contextHolder}

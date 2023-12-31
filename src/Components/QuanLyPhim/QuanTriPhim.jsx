@@ -25,17 +25,17 @@ const QuanTriPhim = () => {
   // const { users } = useSelector((state) => state.nguoiDung);
   //   const { users } = useSelector((state) => state.nguoiDung);
   //   console.log(users);
-  console.log(movies);
+  // console.log(movies);
   useEffect(() => {
     movieSer
       .getAllListMovie()
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         setMovies(result.data.content);
         // dispatch(set_loading_ended);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         // dispatch(set_loading_ended);
       });
   }, []);
@@ -76,9 +76,9 @@ const QuanTriPhim = () => {
         // text chứa giá trị của thuộc tính trong data.
         // record chưa thông tin phần tử trong mảng của data
         // index là vị trí trong mảng data
-        console.log(text);
-        console.log(record);
-        console.log(index);
+        // console.log(text);
+        // console.log(record);
+        // console.log(index);
         return (
           <p color="green" className="line-clamp-1">
             {text}
@@ -112,7 +112,7 @@ const QuanTriPhim = () => {
                   dispatch(getAllMovie());
                 })
                 .catch((erro) => {
-                  console.log(erro);
+                  // console.log(erro);
                 });
             }}
           >

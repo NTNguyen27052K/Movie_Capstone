@@ -16,7 +16,7 @@ const Detail = (maPhim) => {
     rapServ
       .layDanhSachLichChieu(params.id)
       .then((res) => {
-        console.log(res.data.content);
+        // console.log(res.data.content);
         setMaPhimDetail(res.data.content);
       })
       .catch((err) => {

@@ -24,7 +24,7 @@ export const themPhimUploatHinh = (formData) => {
     try {
       let res = await movieSer.addPhim(formData);
       alert("Thêm Phim Thành Công");
-      console.log("res", res.data.content);
+      // console.log("res", res.data.content);
     } catch (orro) {
       console.log(orro);
       alert("thức bại");

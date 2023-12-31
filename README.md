@@ -4,13 +4,13 @@ master branch
 
 Các thư mục cần tạo:
 
-- Components(Chứa các thành phần nhỏ trong một page)
-- Pages(Home, Detail, BokingTicket, SignUp, SignIn, Admin, AdminUsers, AdminFilms, AdminFilmsList, AdminFilmsAdd, )
-- Redux
-- Services: Nơi lưu trữ các logic về gọi dữ liệu
+- components(Chứa các thành phần nhỏ trong một page)
+- pages(Home, Detail, BokingTicket, SignUp, SignIn, Admin, AdminUsers, AdminFilms, AdminFilmsList, AdminFilmsAdd, )
+- redux
+- services: Nơi lưu trữ các logic về gọi dữ liệu
 - Utils: Nơi chứa các hàm, các logic hỗ trợ
 - Assets: Lưu trữ hình ảnh, mp4, json, svg...
-- Template
+- template
 
 Các thư viện cần cài đặt:
 

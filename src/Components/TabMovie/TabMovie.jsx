@@ -29,7 +29,7 @@ const TabMovie = () => {
   };
 
   return (
-    <div className="hidden xl:block tab__movie max-w-screen-xl mx-auto mb-5 rounded border">
+    <div className="tabMovie hidden xl:block max-w-screen-xl mx-auto mb-5 rounded border">
       <Tabs onTabScroll="true" tabPosition={"left"} items={renderItemTab()} />
     </div>
   );

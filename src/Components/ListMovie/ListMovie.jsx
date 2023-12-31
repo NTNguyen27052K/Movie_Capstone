@@ -27,7 +27,7 @@ const ListMovie = () => {
     movieSer
       .getAllListMovie()
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         setlistMovie(result.data.content);
         dispatch(set_loading_ended());
       })

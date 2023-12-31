@@ -5,8 +5,7 @@ export const datVeAction = (thongTinDatVe = new ThongTinDatVe()) => {
   return async (dispatch) => {
     try {
       const result = await datVeServ.datVe(thongTinDatVe);
-      console.log(result.data.content);
-
+      // console.log(result.data.content);
     } catch (error) {
       console.log(error.response.data);
     }
